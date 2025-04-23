@@ -5,11 +5,11 @@ import Buttons from "./model/Buttons.jsx"
 const App = () => {
 
   return (
-    <>
-      <img src= {logo}/> 
+    <div className="d-flex w-100 vh-100 flex-column align-items-center justify-content-around">
+      <img style={{maxWidth:"150px"}} src= {logo}/> 
       <Inputs/>
       <Buttons/>
-    </>
+    </div>
   );
 };
 

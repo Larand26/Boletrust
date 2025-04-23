@@ -1,7 +1,7 @@
 const Inputs = () => {
     return (
       <>
-        <div>
+        <div className="d-flex flex-column align-items-center justify-content-around">
           <label htmlFor="inpCodBarras">Código de Barras:</label>
           <input type="text" name="inpCodBarras" id="inpCodBarras"/>
           <label htmlFor="inpFile">Coloque a sua imagem:</label>
