@@ -1,6 +1,7 @@
 import arrow from "../assets/PlayArrow.svg"
 import scanner from "../assets/Scanner.svg"
 
+
 // Para acesssar pastas anteriores a pasta que esta sofrendo manutenção não esquecer do ../ ou para os mais leigos PONTO PONTO BARRA.
 
 const Buttons = () => {
