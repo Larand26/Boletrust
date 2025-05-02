@@ -5,25 +5,42 @@ import Buttons from "./model/Buttons.jsx";
 import "./estilo/Estilo.css";
 
 const App = () => {
-  const [theme, setTheme] = useState("white"); 
+  const [theme, setTheme] = useState("white");
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "white" ? "dark" : "white")); 
+    setTheme((prevTheme) => (prevTheme === "white" ? "dark" : "white"));
   };
 
   return (
-    <div className={`app ${theme} d-flex w-100 vh-100 flex-column align-items-center justify-content-around`}>
+    <div
+      className={`app ${theme} d-flex w-100 vh-100 flex-column align-items-center justify-content-around`}
+    >
       <img style={{ maxWidth: "150px" }} src={logo} alt="Logo" />
-      <form>
+      <form className="contorno">
         <Inputs />
         <Buttons />
       </form>
+
       <button onClick={toggleTheme}>
         Alternar para {theme === "white" ? "Modo Escuro" : "Modo Claro"}
       </button>
+      {/* Luas aparecem apenas no modo escuro */}
+      {theme === "dark" && (
+        <div className="luas">
+          <div className="grupo-esquerdo">
+            {[...Array(1)].map((_, i) => (
+              <div key={i} className="lua linha"></div>
+            ))}
+          </div>
+          <div className="grupo-direito">
+            {[...Array(0)].map((_, i) => (
+              <div key={i} className="lua linha"></div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default App;
-

@@ -32,3 +32,84 @@ button {
   padding: 10px 20px;
   cursor: pointer;
 }
+
+.contorno {
+  border: 2px solid black; /* Cria o contorno */
+  border-radius: 8px; /* Cantos arredondados */
+  padding: 20px; /* Espaçamento interno */
+  width: fit-content; /* Ajusta ao tamanho do conteúdo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Quando o tema for escuro */
+.app.dark .contorno {
+  border: 2px solid white; /* Contorno branco no modo escuro */
+}
+.luas {
+  display: flex;
+  justify-content: space-between; /* Divide em dois grupos */
+  align-items: flex-start; /* Mantém no topo */
+  position: absolute;
+  top: 100px;
+  width: 90%;
+  padding: 0 20px; /* Espaço lateral */
+}
+
+.grupo-esquerdo,
+.grupo-direito {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaçamento entre luas */
+}
+
+.lua {
+  width: 80px;
+  height: 80px;
+  background-color: #f5f3ce;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 15px #f5f3ce;
+}
+
+/* Criando a linha */
+.lua::after {
+  content: "";
+  width: 2px;
+  height: 60px; /* Tamanho da linha */
+  background-color: white; /* Cor da linha */
+  position: absolute;
+  top: -60px; /* Posição para ficar acima da lua */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.lua::before {
+  content: "";
+  width: 65px;
+  height: 60px;
+  background-color: #222;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 25px;
+}
+
+@keyframes moonGlow {
+  0% {
+    box-shadow: 0 0 5px #f5f3ce;
+  }
+  50% {
+    box-shadow: 0 0 15px #f5f3ce;
+  }
+  100% {
+    box-shadow: 0 0 5px #f5f3ce;
+  }
+}
+
+.lua {
+  animation: moonGlow 3s infinite alternate;
+}
