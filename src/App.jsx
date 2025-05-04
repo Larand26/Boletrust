@@ -16,12 +16,12 @@ const App = () => {
       className={`app ${theme} d-flex w-100 vh-100 flex-column align-items-center justify-content-around`}
     >
       <img style={{ maxWidth: "150px" }} src={logo} alt="Logo" />
-      <form className="contorno">
+      <form className="contorno p-3">
         <Inputs />
-        <Buttons />
+        <Buttons theme={theme} />
       </form>
 
-      <button onClick={toggleTheme}>
+      <button className="contorno" onClick={toggleTheme}>
         Alternar para {theme === "white" ? "Modo Escuro" : "Modo Claro"}
       </button>
       {/* Luas aparecem apenas no modo escuro */}
