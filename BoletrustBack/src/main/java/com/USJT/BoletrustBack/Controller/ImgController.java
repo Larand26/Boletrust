@@ -17,16 +17,23 @@ public class ImgController {
     @CrossOrigin(origins = "*")
     @PostMapping
     public HashMap<String, String> uploadImage(@RequestBody Image image) {
-        
         try {
+            if (image.getImg() == null || image.getImg().isEmpty()) {
+                HashMap<String, String> errorResponse = new HashMap<>();
+                errorResponse.put("status", "erro");
+                errorResponse.put("message", "Imagem não colocada");
+                return errorResponse;
+            }
             HashMap<String,String> result = new HashMap<>();
+            result.put("status", "sucesso");
             result.put("message", "foi");
             return result;
         } catch (Exception e) {
-            HashMap<String,String> error = new HashMap<>();
-            error.put("message", "Houve um erro");
-            error.put("Erro: ", e.toString());
-            return error;
+            HashMap<String,String> errorResponse = new HashMap<>();
+            errorResponse.put("status", "erro");
+            errorResponse.put("message", "Houve um erro");
+            errorResponse.put("Erro: ", e.toString());
+            return errorResponse;
         }
     }
     
