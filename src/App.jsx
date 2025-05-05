@@ -9,6 +9,10 @@ const App = () => {
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "white" ? "dark" : "white"));
+    fetch("http://localhost:8080/hello-word")
+      .then((res) => res.text())
+      .then((data) => console.log(data))
+      .catch((err) => console.error(err));
   };
 
   return (
