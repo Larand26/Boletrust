@@ -5,8 +5,10 @@ import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
 
 import javax.imageio.ImageIO;
+
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.util.Base64;
 
 public class Readercod {
@@ -33,8 +35,11 @@ public class Readercod {
 
             return result.getText();
 
-        } catch (Exception e) {
-            System.out.println("Erro ao ler o código de barras: " + e.getMessage());
+        } catch (NotFoundException e) {
+            System.out.println("Erro ao ler o código de barras (NotFoundException): " + e.getMessage());
+            return "Erro ao ler o código de barras";
+        } catch (IOException e) {
+            System.out.println("Erro ao ler o código de barras (IOException): " + e.getMessage());
             return "Erro ao ler o código de barras";
         }
     }
