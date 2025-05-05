@@ -33,7 +33,6 @@ public class VerifyBoleto {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
             result.put("status", "error");
             result.put("message", "Erro ao processar o código de barras: " + e.getMessage());
         }
