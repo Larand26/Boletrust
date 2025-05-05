@@ -1,0 +1,144 @@
+{
+  "001": { "nome": "Banco do Brasil S.A.", "logo": "banco_do_brasil.png" },
+  "003": { "nome": "Banco da Amazônia S.A.", "logo": "banco_da_amazonia.png" },
+  "004": {
+    "nome": "Banco do Nordeste do Brasil S.A.",
+    "logo": "banco_do_nordeste.png"
+  },
+  "007": {
+    "nome": "Banco Nacional de Desenvolvimento Econômico e Social (BNDES)",
+    "logo": "bndes.png"
+  },
+  "012": { "nome": "Banco Inbursa S.A.", "logo": "banco_inbursa.png" },
+  "025": { "nome": "Banco Alfa S.A.", "logo": "banco_alfa.png" },
+  "029": {
+    "nome": "Banco Itaú Consignado S.A.",
+    "logo": "itau_consignado.png"
+  },
+  "033": { "nome": "Banco Santander (Brasil) S.A.", "logo": "santander.png" },
+  "036": { "nome": "Banco Bradesco BBI S.A.", "logo": "bradesco_bbi.png" },
+  "037": { "nome": "Banco do Estado do Pará S.A.", "logo": "banpara.png" },
+  "040": { "nome": "Banco Cargill S.A.", "logo": "banco_cargill.png" },
+  "041": {
+    "nome": "Banco do Estado do Rio Grande do Sul S.A. (Banrisul)",
+    "logo": "banrisul.png"
+  },
+  "047": { "nome": "Banco do Estado de Sergipe S.A.", "logo": "banese.png" },
+  "070": { "nome": "Banco de Brasília S.A. (BRB)", "logo": "brb.png" },
+  "074": { "nome": "Banco J. Safra S.A.", "logo": "banco_safra.png" },
+  "075": { "nome": "Banco ABN AMRO S.A.", "logo": "abn_amro.png" },
+  "076": { "nome": "Banco KDB do Brasil S.A.", "logo": "kdb_brasil.png" },
+  "077": { "nome": "Banco Inter S.A.", "logo": "banco_inter.png" },
+  "079": {
+    "nome": "Banco Original do Agronegócio S.A.",
+    "logo": "banco_original_agronegocio.png"
+  },
+  "082": { "nome": "Banco Topázio S.A.", "logo": "banco_topazio.png" },
+  "083": {
+    "nome": "Banco da China Brasil S.A.",
+    "logo": "banco_china_brasil.png"
+  },
+  "104": { "nome": "Caixa Econômica Federal", "logo": "caixa.png" },
+  "107": { "nome": "Banco BOCOM BBM S.A.", "logo": "bocom_bbm.png" },
+  "121": { "nome": "Banco Agibank S.A.", "logo": "agibank.png" },
+  "212": { "nome": "Banco Original S.A.", "logo": "banco_original.png" },
+  "213": { "nome": "Banco Arbi S.A.", "logo": "banco_arbi.png" },
+  "217": { "nome": "Banco John Deere S.A.", "logo": "john_deere.png" },
+  "218": { "nome": "Banco BS2 S.A.", "logo": "bs2.png" },
+  "222": {
+    "nome": "Banco Credit Agricole Brasil S.A.",
+    "logo": "credit_agricole.png"
+  },
+  "224": { "nome": "Banco Fibra S.A.", "logo": "banco_fibra.png" },
+  "233": { "nome": "Banco Cifra S.A.", "logo": "banco_cifra.png" },
+  "237": { "nome": "Banco Bradesco S.A.", "logo": "bradesco.png" },
+  "241": { "nome": "Banco Clássico S.A.", "logo": "banco_classico.png" },
+  "243": { "nome": "Banco Máxima S.A.", "logo": "banco_maxima.png" },
+  "246": { "nome": "Banco ABC Brasil S.A.", "logo": "abc_brasil.png" },
+  "260": { "nome": "Nu Pagamentos S.A. (Nubank)", "logo": "nubank.png" },
+  "265": { "nome": "Banco Fator S.A.", "logo": "banco_fator.png" },
+  "266": { "nome": "Banco Cédula S.A.", "logo": "banco_cedula.png" },
+  "280": {
+    "nome": "Avista S.A. Crédito, Financiamento e Investimento",
+    "logo": "avista.png"
+  },
+  "290": { "nome": "PagSeguro Internet S.A. (PagBank)", "logo": "pagbank.png" },
+  "300": {
+    "nome": "Banco de La Nación Argentina",
+    "logo": "banco_nacion_argentina.png"
+  },
+  "318": { "nome": "Banco BMG S.A.", "logo": "bmg.png" },
+  "320": { "nome": "Banco CCB Brasil S.A.", "logo": "ccb_brasil.png" },
+  "323": {
+    "nome": "Mercado Pago Instituição de Pagamento Ltda.",
+    "logo": "mercado_pago.png"
+  },
+  "335": { "nome": "Banco Digio S.A.", "logo": "digio.png" },
+  "336": { "nome": "Banco C6 S.A. (C6 Bank)", "logo": "c6bank.png" },
+  "341": { "nome": "Itaú Unibanco S.A.", "logo": "itau.png" },
+  "348": { "nome": "Banco XP S.A.", "logo": "xp.png" },
+  "368": { "nome": "Banco Carrefour", "logo": "carrefour.png" },
+  "370": { "nome": "Banco Mizuho do Brasil S.A.", "logo": "mizuho.png" },
+  "376": { "nome": "Banco J.P. Morgan S.A.", "logo": "jp_morgan.png" },
+  "380": { "nome": "PicPay Serviços S.A.", "logo": "picpay.png" },
+  "389": {
+    "nome": "Banco Mercantil do Brasil S.A.",
+    "logo": "mercantil_brasil.png"
+  },
+  "394": {
+    "nome": "Banco Bradesco Financiamentos S.A.",
+    "logo": "bradesco_financiamentos.png"
+  },
+  "412": { "nome": "Banco Capital S.A.", "logo": "banco_capital.png" },
+  "422": { "nome": "Banco Safra S.A.", "logo": "banco_safra.png" },
+  "456": { "nome": "Banco MUFG Brasil S.A.", "logo": "mufg.png" },
+  "473": {
+    "nome": "Banco Caixa Geral – Brasil S.A.",
+    "logo": "caixa_geral.png"
+  },
+  "479": { "nome": "Banco ItauBank S.A.", "logo": "itaubank.png" },
+  "494": {
+    "nome": "Banco de La República Oriental del Uruguay",
+    "logo": "banco_uruguai.png"
+  },
+  "495": {
+    "nome": "Banco de La Provincia de Buenos Aires",
+    "logo": "banco_buenos_aires.png"
+  },
+  "505": {
+    "nome": "Banco Credit Suisse (Brasil) S.A.",
+    "logo": "credit_suisse.png"
+  },
+  "600": {
+    "nome": "Banco Luso Brasileiro S.A.",
+    "logo": "luso_brasileiro.png"
+  },
+  "604": {
+    "nome": "Banco Industrial do Brasil S.A.",
+    "logo": "industrial_brasil.png"
+  },
+  "612": { "nome": "Banco Guanabara S.A.", "logo": "guanabara.png" },
+  "626": { "nome": "Banco Ficsa S.A.", "logo": "ficsa.png" },
+  "637": { "nome": "Banco Sofisa S.A. (Sofisa Direto)", "logo": "sofisa.png" },
+  "653": { "nome": "Banco Indusval S.A.", "logo": "indusval.png" },
+  "654": { "nome": "Banco A.J. Renner S.A.", "logo": "aj_renner.png" },
+  "655": { "nome": "Banco Votorantim S.A. (BV)", "logo": "bv.png" },
+  "707": { "nome": "Banco Daycoval S.A.", "logo": "daycoval.png" },
+  "735": { "nome": "Neon Pagamentos S.A.", "logo": "neon.png" },
+  "739": { "nome": "Banco Cetelem S.A.", "logo": "cetelem.png" },
+  "741": { "nome": "Banco Ribeirão Preto S.A.", "logo": "ribeirao_preto.png" },
+  "743": { "nome": "Banco Semear S.A.", "logo": "semear.png" },
+  "745": { "nome": "Banco Citibank S.A.", "logo": "citibank.png" },
+  "746": { "nome": "Banco Modal S.A.", "logo": "modal.png" },
+  "747": {
+    "nome": "Banco Rabobank International Brasil S.A.",
+    "logo": "rabobank.png"
+  },
+  "748": { "nome": "Banco Cooperativo Sicredi S.A.", "logo": "sicredi.png" },
+  "752": { "nome": "Banco BNP Paribas Brasil S.A.", "logo": "bnp_paribas.png" },
+  "756": {
+    "nome": "Banco Cooperativo do Brasil S.A. (Sicoob)",
+    "logo": "sicoob.png"
+  },
+  "757": { "nome": "Banco KEB Hana do Brasil S.A.", "logo": "keb_hana.png" }
+}
