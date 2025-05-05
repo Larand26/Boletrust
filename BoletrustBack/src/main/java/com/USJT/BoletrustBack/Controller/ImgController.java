@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.USJT.BoletrustBack.models.Image;
+import com.USJT.BoletrustBack.models.Readercod;
 
 @RestController
 @RequestMapping("/img-verify")
@@ -18,6 +19,7 @@ public class ImgController {
     @PostMapping
     public HashMap<String, String> uploadImage(@RequestBody Image image) {
         try {
+            System.out.println("Entrou na api");
             if (image.getImg() == null || image.getImg().isEmpty()) {
                 HashMap<String, String> errorResponse = new HashMap<>();
                 errorResponse.put("status", "erro");
@@ -27,6 +29,14 @@ public class ImgController {
             HashMap<String,String> result = new HashMap<>();
             result.put("status", "sucesso");
             result.put("message", "foi");
+
+             // Remover o prefixo 'data:image/jpeg;base64,' se existir
+            String base64Image = image.getImg().split(",")[1];
+
+            String cod = Readercod.read(base64Image);
+            System.out.println("Código de barras - "+cod);
+            result.put("cod", cod);
+
             return result;
         } catch (Exception e) {
             HashMap<String,String> errorResponse = new HashMap<>();
