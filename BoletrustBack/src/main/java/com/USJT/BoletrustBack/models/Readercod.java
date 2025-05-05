@@ -14,8 +14,6 @@ import java.util.Base64;
 public class Readercod {
     public static String read(String base64Image) {
         try {
-            System.out.println("Entrou no ReaderCod");
-
             // Remove o prefixo se tiver (ex: "data:image/png;base64,")
             if (base64Image.contains(",")) {
                 base64Image = base64Image.split(",")[1];
