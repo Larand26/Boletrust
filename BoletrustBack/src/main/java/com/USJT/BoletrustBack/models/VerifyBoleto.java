@@ -21,6 +21,16 @@ public class VerifyBoleto {
             JSONObject bancos = (JSONObject) parser.parse(new InputStreamReader(input));
 
             String codBanco = cod.substring(0, 3);
+            String dv = cod.substring(4, 5);
+            String vencimento = cod.substring(5, 9);
+            String valor = cod.substring(9, 19);
+            String convenio = cod.substring(19, 23);
+            String agenciaRel = cod.substring(30, 34);
+            String conta = cod.substring(34, 42);
+            String carteira =  cod.substring(42, 43);
+            
+            System.out.println("Vencimento "+vencimento);
+
             JSONObject dadosBanco = (JSONObject) bancos.get(codBanco);
 
             if (dadosBanco != null) {
