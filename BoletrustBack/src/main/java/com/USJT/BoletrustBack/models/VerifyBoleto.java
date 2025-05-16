@@ -5,6 +5,7 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.sql.Date;
 import java.util.HashMap;
 
 public class VerifyBoleto {
@@ -31,7 +32,10 @@ public class VerifyBoleto {
 
             //Verifica o DV
             boolean dvValido = verifyDV(cod, dv);
-            
+
+            // Verifica o vencimento
+            String vencimentoDate = getVencimento(Integer.parseInt(vencimento));
+            System.out.println("Vencimento: " + vencimentoDate);            
 
             JSONObject dadosBanco = (JSONObject) bancos.get(codBanco);
 
@@ -52,6 +56,11 @@ public class VerifyBoleto {
         return result;
     }
 
+    private static Date getVencimento(String vencimento) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getVencimento'");
+    }
+
     private static boolean verifyDV(String cod, String dv) {
         try {
             // Remove o DV (posição 4)
@@ -70,10 +79,24 @@ public class VerifyBoleto {
         int resto = soma % 11;
         int dvCalculado = 11 - resto;
         if (dvCalculado == 0 || dvCalculado == 10 || dvCalculado == 11) dvCalculado = 1;
-        System.out.println(dv.equals(String.valueOf(dvCalculado))?"Está correto":"Está errado");
         return dv.equals(String.valueOf(dvCalculado));
     } catch (Exception e) {
         return false;
     }
 }
+
+    public static String getVencimento(int venc) {
+        try {
+            // Exemplo de cálculo de vencimento a partir de um fator de vencimento (dias desde 07/10/1997)
+            java.util.Calendar base = java.util.Calendar.getInstance();
+            base.set(1997, java.util.Calendar.OCTOBER, 7, 0, 0, 0);
+            base.set(java.util.Calendar.MILLISECOND, 0);
+            base.add(java.util.Calendar.DATE, venc);
+            String dateOfVenc = String.format("%02d/%02d/%04d", base.get(java.util.Calendar.DAY_OF_MONTH), base.get(java.util.Calendar.MONTH) + 1, base.get(java.util.Calendar.YEAR));
+            return dateOfVenc;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
 }
