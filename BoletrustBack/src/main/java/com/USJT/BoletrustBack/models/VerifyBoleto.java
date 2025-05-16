@@ -28,8 +28,10 @@ public class VerifyBoleto {
             String agenciaRel = cod.substring(30, 34);
             String conta = cod.substring(34, 42);
             String carteira =  cod.substring(42, 43);
+
+            //Verifica o DV
+            boolean dvValido = verifyDV(cod, dv);
             
-            System.out.println("Vencimento "+vencimento);
 
             JSONObject dadosBanco = (JSONObject) bancos.get(codBanco);
 
@@ -49,4 +51,29 @@ public class VerifyBoleto {
 
         return result;
     }
+
+    private static boolean verifyDV(String cod, String dv) {
+        try {
+            // Remove o DV (posição 4)
+            String semDV = cod.substring(0, 4) + cod.substring(5);
+            int peso = 2;
+            int soma = 0;
+
+            // Percorre da direita para a esquerda
+            for (int i = semDV.length() - 1; i >= 0; i--) {
+                int num = Character.getNumericValue(semDV.charAt(i));
+                soma += num * peso;
+            peso++;
+            if (peso > 9) peso = 2;
+        }
+
+        int resto = soma % 11;
+        int dvCalculado = 11 - resto;
+        if (dvCalculado == 0 || dvCalculado == 10 || dvCalculado == 11) dvCalculado = 1;
+        System.out.println(dv.equals(String.valueOf(dvCalculado))?"Está correto":"Está errado");
+        return dv.equals(String.valueOf(dvCalculado));
+    } catch (Exception e) {
+        return false;
+    }
+}
 }
