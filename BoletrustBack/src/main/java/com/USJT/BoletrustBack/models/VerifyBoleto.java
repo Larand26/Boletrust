@@ -35,7 +35,10 @@ public class VerifyBoleto {
 
             // Verifica o vencimento
             String vencimentoDate = getVencimento(Integer.parseInt(vencimento));
-            System.out.println("Vencimento: " + vencimentoDate);            
+
+            // Verifica o valor
+            double valorDouble = Double.parseDouble(valor) / 100;
+            System.out.println("Valor: " + valorDouble);
 
             JSONObject dadosBanco = (JSONObject) bancos.get(codBanco);
 
