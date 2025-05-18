@@ -5,7 +5,6 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.sql.Date;
 import java.util.HashMap;
 
 public class VerifyBoleto {
