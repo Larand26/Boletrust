@@ -25,10 +25,6 @@ public class VerifyBoleto {
             String dv = cod.substring(4, 5);
             String vencimento = cod.substring(5, 9);
             String valor = cod.substring(9, 19);
-            String convenio = cod.substring(19, 23);
-            String agenciaRel = cod.substring(30, 34);
-            String conta = cod.substring(34, 42);
-            String carteira =  cod.substring(42, 43);
 
             //Verifica o DV
             boolean dvValido = verifyDV(cod, dv);
@@ -38,7 +34,6 @@ public class VerifyBoleto {
 
             // Verifica o valor
             double valorDouble = Double.parseDouble(valor) / 100;
-            System.out.println("Valor: " + valorDouble);
 
             JSONObject dadosBanco = (JSONObject) bancos.get(codBanco);
 
@@ -46,6 +41,9 @@ public class VerifyBoleto {
                 result.put("status", "success");
                 result.put("banco", (String) dadosBanco.get("nome"));
                 result.put("logo", (String) dadosBanco.get("logo"));
+                result.put("vencimento", vencimentoDate);
+                result.put("valor", String.format("%.2f", valorDouble));
+                result.put("dvValido", String.valueOf(dvValido));
             } else {
                 result.put("status", "error");
                 result.put("message", "Código de banco não encontrado");
