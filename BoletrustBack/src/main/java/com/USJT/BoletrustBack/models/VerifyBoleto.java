@@ -18,7 +18,7 @@ public class VerifyBoleto {
             // Verifica se o código de barras tem 44 caracteres ou é nulo
             if (cod == null || cod.isEmpty() || cod.length() != 44) {
                 result.put("status", "error");
-                result.put("message", "Código de barras inválido ou faltando digitos");
+                result.put("message", "Código de barras inválido ou faltando dígitos");
                 return result;
             }
 
@@ -65,10 +65,6 @@ public class VerifyBoleto {
         return result;
     }
 
-    private static Date getVencimento(String vencimento) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getVencimento'");
-    }
 
     private static boolean verifyDV(String cod, String dv) {
         try {
