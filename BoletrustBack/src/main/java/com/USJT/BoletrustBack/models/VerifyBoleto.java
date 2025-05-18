@@ -14,6 +14,14 @@ public class VerifyBoleto {
         HashMap<String, String> result = new HashMap<>();
 
         try {
+
+            // Verifica se o código de barras tem 44 caracteres ou é nulo
+            if (cod == null || cod.isEmpty() || cod.length() != 44) {
+                result.put("status", "error");
+                result.put("message", "Código de barras inválido ou faltando digitos");
+                return result;
+            }
+
             // Lê do classpath (src/main/resources/json/bancos.json)
             InputStream input = VerifyBoleto.class.getClassLoader().getResourceAsStream("json/bancos.json");
             if (input == null) throw new Exception("Arquivo bancos.json não encontrado no classpath");
