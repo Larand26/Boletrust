@@ -21,6 +21,8 @@ const Buttons = (props) => {
         <button
           id="buttonPlay"
           className="contorno btn btn-light rounded-circle p-3"
+          onClick={() => props.verify()}
+          type="button"
         >
           <img src={arrowImg} alt="" />
         </button>

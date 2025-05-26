@@ -1,11 +1,11 @@
 package com.USJT.BoletrustBack.models;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 public class VerifyBoleto {
 
@@ -13,7 +13,7 @@ public class VerifyBoleto {
         HashMap<String, String> result = new HashMap<>();
 
         try {
-
+            System.out.println("Código de barras recebido: " + cod);
             // Verifica se o código de barras tem 44 caracteres ou é nulo
             if (cod == null || cod.isEmpty() || cod.length() != 44) {
                 result.put("status", "error");

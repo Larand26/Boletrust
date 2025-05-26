@@ -31,6 +31,7 @@ public class ImgController {
             String base64Image = image.getImg().split(",")[1];
 
             String cod = Readercod.read(base64Image);
+           
             
             HashMap<String, String> result = VerifyBoleto.verify(cod);
             result.put("cod", cod);
