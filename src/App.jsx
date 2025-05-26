@@ -17,7 +17,8 @@ const App = () => {
 
   return (
     <div
-      className={`app ${theme} d-flex w-100 vh-100 flex-column align-items-center justify-content-around`}
+      className={`app ${theme} d-flex vh-100 flex-column align-items-center justify-content-around`}
+      style={{ width: "400px" }}
     >
       <img style={{ maxWidth: "150px" }} src={logo} alt="Logo" />
       <form className="contorno p-3">
