@@ -13,7 +13,6 @@ public class VerifyBoleto {
         HashMap<String, String> result = new HashMap<>();
 
         try {
-            System.out.println("Código de barras recebido: " + cod);
             // Verifica se o código de barras tem 44 caracteres ou é nulo
             if (cod == null || cod.isEmpty() || cod.length() != 44) {
                 result.put("status", "error");
