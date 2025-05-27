@@ -36,7 +36,7 @@ button {
 .contorno {
   border: 1px solid black; /* Cria o contorno */
   border-radius: 12px; /* Cantos arredondados */
-  width: 100%;
+  width: 80%;
   max-width: 400px;
   display: flex;
   flex-direction: column;
