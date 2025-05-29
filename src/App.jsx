@@ -10,7 +10,7 @@ const App = () => {
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "white" ? "dark" : "white"));
-    fetch("http://localhost:8080/hello-word")
+    fetch("http://localhost:8080/hello-world")
       .then((res) => res.text())
       .then((data) => console.log(data))
       .catch((err) => console.error(err));
