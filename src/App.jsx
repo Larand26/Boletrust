@@ -3,7 +3,10 @@ import logo from "./assets/Logo.png";
 import Inputs from "./model/Inputs.jsx";
 import Buttons from "./model/Buttons.jsx";
 import readBarrCode from "./utils/readBarrCode.js";
+import PopUp from "./model/PopUp.jsx";
 import "./estilo/Estilo.css";
+import sol from "./assets/Sol.svg";
+import lua from "./assets/Lua.svg";
 
 const App = () => {
   const [theme, setTheme] = useState("white");
@@ -19,14 +22,20 @@ const App = () => {
   const verify = () => {
     const text = document.getElementById("inpCodBarras").value;
     const img = document.getElementById("inpFile").value;
+    let data;
 
-    if (text && !img) {
-      readBarrCode
+    if (text) {
+      data = readBarrCode
         .post("/txt-verify", {
           cod: text,
         })
         .then((res) => {
           console.log(res.data);
+          document.getElementById("pBanco").innerText = res.data.banco;
+          document.getElementById("pDataVencimento").innerText =
+            res.data.vencimento;
+          document.getElementById("pValor").innerText = "R$ " + res.data.valor;
+          document.getElementById("pCodigoBarras").innerText = res.data.cod;
         });
     }
     if (!text && img) {
@@ -38,18 +47,28 @@ const App = () => {
       reader.onloadend = () => {
         const base64String = reader.result;
 
-        readBarrCode
+        data = readBarrCode
           .post("/img-verify", {
             img: base64String,
           })
           .then((res) => {
             console.log(res.data);
+            document.getElementById("pBanco").innerText = res.data.banco;
+            document.getElementById("pDataVencimento").innerText =
+              res.data.vencimento;
+            document.getElementById("pValor").innerText =
+              "R$ " + res.data.valor;
+            document.getElementById("pCodigoBarras").innerText = res.data.cod;
           });
       };
 
       reader.readAsDataURL(file); // Isso converte para base64
     }
+    document.getElementById("popUp").style.transform = "translateX(0)";
   };
+
+  const solImg = <img src={sol} alt="Sol" width="24" />;
+  const luaImg = <img src={lua} alt="Lua" width="24" />;
 
   return (
     <div
@@ -63,7 +82,7 @@ const App = () => {
       </form>
 
       <button className="contorno" onClick={toggleTheme}>
-        Alternar para {theme === "white" ? "Modo Escuro" : "Modo Claro"}
+        {theme === "white" ? luaImg : solImg}
       </button>
       {/* Luas aparecem apenas no modo escuro */}
       {theme === "dark" && (
@@ -80,6 +99,24 @@ const App = () => {
           </div>
         </div>
       )}
+      <PopUp onClose={() => {}}>
+        <div>
+          <p>Banco</p>
+          <p id="pBanco" className="font-weight-bold"></p>
+        </div>
+        <div>
+          <p>Data de vencimento</p>
+          <p id="pDataVencimento" className="font-weight-bold"></p>
+        </div>
+        <div>
+          <p>Valor</p>
+          <p id="pValor" className="font-weight-bold"></p>
+        </div>
+        <div>
+          <p>Código de barras</p>
+          <p id="pCodigoBarras" className="font-bold text-break"></p>
+        </div>
+      </PopUp>
     </div>
   );
 };

@@ -26,12 +26,12 @@ input[type="file"] {
   cursor: pointer;
 }
 
-button {
+/* button {
   margin-top: 20px;
   border-radius: 10px;
   padding: 10px 20px;
   cursor: pointer;
-}
+} */
 
 .contorno {
   border: 1px solid black; /* Cria o contorno */
@@ -123,4 +123,40 @@ input::file-selector-button {
 
 .lua {
   animation: moonGlow 3s infinite alternate;
+}
+
+@keyframes moonGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 200, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 200, 0, 1);
+  }
+}
+
+.sol {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  animation: moonGlow 3s infinite alternate;
+}
+
+button {
+  background-color: #fff; /* Cor padrão do botão */
+  color: #000; /* Cor padrão do texto */
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilo para o dark theme */
+
+.app.dark button {
+  background-color: #444444; /* Cor do botão no dark mode */
+}
+
+.app.dark button:hover {
+  background-color: #444; /* Cor do botão ao passar o mouse no dark mode */
 }
