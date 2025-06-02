@@ -53,12 +53,14 @@ const App = () => {
           })
           .then((res) => {
             console.log(res.data);
-            document.getElementById("pBanco").innerText = res.data.banco;
+            document.getElementById("pBanco").innerText =
+              res.data.banco || "Banco não identificado";
             document.getElementById("pDataVencimento").innerText =
-              res.data.vencimento;
+              res.data.vencimento || "Data não identificada";
             document.getElementById("pValor").innerText =
-              "R$ " + res.data.valor;
-            document.getElementById("pCodigoBarras").innerText = res.data.cod;
+              "R$ " + res.data.valor || "Valor não identificado";
+            document.getElementById("pCodigoBarras").innerText =
+              res.data.cod || "Código de barras não identificado";
           });
       };
 
