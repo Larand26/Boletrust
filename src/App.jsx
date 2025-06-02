@@ -36,6 +36,11 @@ const App = () => {
             res.data.vencimento;
           document.getElementById("pValor").innerText = "R$ " + res.data.valor;
           document.getElementById("pCodigoBarras").innerText = res.data.cod;
+          if (res.data.dv == "false" || !res.data.dv) {
+            alert(
+              "O código de barras informado é inválido. Verifique o número e tente novamente."
+            );
+          }
         });
     }
     if (!text && img) {
