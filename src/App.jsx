@@ -57,8 +57,9 @@ const App = () => {
               res.data.banco || "Banco não identificado";
             document.getElementById("pDataVencimento").innerText =
               res.data.vencimento || "Data não identificada";
-            document.getElementById("pValor").innerText =
-              "R$ " + res.data.valor || "Valor não identificado";
+            document.getElementById("pValor").innerText = res.data.valor
+              ? "R$ " + res.data.valor
+              : "Valor não identificado";
             document.getElementById("pCodigoBarras").innerText =
               res.data.cod || "Código de barras não identificado";
           });
